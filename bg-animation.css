@@ -1,0 +1,170 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   transition: all 0.5s;
+   font-family: sans-serif;
+}
+
+body::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+
+   background-image: url(imgs/birthday-pattern.png);
+   background-repeat: repeat;
+   background-size: 300px;
+
+   filter: opacity(0.15);
+
+   z-index: -1;
+
+   animation: moveBgUpLeft 5s linear infinite;
+}
+
+main {
+   background: linear-gradient(180deg, #fefefe08, #f6a4a4);
+   height: 1000px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   img#man {
+      width: 300px;
+      transform: translateX(1500px);
+      /* animation: byte 2s linear infinite; */
+   }
+
+   img#man:hover {
+      cursor: pointer;
+   }
+
+   h2 {
+      text-transform: uppercase;
+      font-size: 60px;
+      margin: 50px 0;
+      opacity: 0;
+   }
+
+   .firework {
+      opacity: 0;
+      z-index: -1;
+      transform: rotateZ(-45deg);
+      position: absolute;
+      /* transition: all 0.5s; */
+      .boom {
+         position: absolute;
+         top: 0px;
+         left: 0px;
+         width: 200px;
+         opacity: 0;
+      }
+      .roket {
+         top: 0px;
+         left: 0px;
+         width: 200px;
+         position: absolute;
+         transition: all 0.5s;
+      }
+   }
+
+   #firework1 {
+      margin-right: 800px;
+   }
+
+   #firework2 {
+      margin-right: -400px;
+      transform: scale(-1) rotateZ(135deg);
+   }
+}
+
+@media screen and (max-width: 1000px) {
+   main {
+      height: 800px;
+
+      h2 {
+         font-size: 30px;
+      }
+      #firework1 {
+         margin-right: 500px;
+      }
+      #firework2 {
+         margin-right: 0px;
+      }
+   }
+}
+
+@keyframes moveBgUpLeft {
+   0% {
+      /* Стартовая позиция */
+      background-position: 0 0;
+   }
+   100% {
+      background-position: -150px -300px;
+   }
+}
+
+@keyframes byte {
+   0%,
+   100% {
+      transform: scale(1);
+   }
+   50% {
+      transform: scale(1.05);
+   }
+}
+
+@keyframes pulse {
+   0%,
+   100% {
+      box-shadow:
+         #f6a4a4 0 0 100px,
+         inset #f6a4a4 0 0 100px;
+   }
+   50% {
+      box-shadow:
+         #f6a4a4 0 0 0px,
+         inset #f6a4a4 0 0 0px;
+   }
+}
+
+/* Анимация полёта ракеты */
+@keyframes flyUp {
+   0% {
+      transform: translateY(0);
+      opacity: 1;
+   }
+   100% {
+      transform: translateX(1000px);
+      opacity: 1;
+   }
+}
+
+/* Класс, который мы вешаем на ракету из JS */
+.roket.flying {
+   animation: flyUp 0.5s ease-out forwards;
+}
+
+/* Анимация взрыва */
+@keyframes explode {
+   0% {
+      transform: scale(0.3);
+      opacity: 0;
+   }
+   30% {
+      transform: scale(1.2);
+      opacity: 1;
+   }
+   100% {
+      transform: scale(1.5);
+      opacity: 0;
+   }
+}
+
+.boom.exploding {
+   animation: explode 1s ease-out forwards;
+}
