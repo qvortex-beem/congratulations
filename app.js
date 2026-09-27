@@ -43,4 +43,45 @@ man.addEventListener("click", (event) => {
          });
       });
    }
+   if (clickCount === 3) {
+      const el = document.getElementById("first-text");
+      el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+   }
+});
+
+const man1 = document.getElementById("man1");
+man1.addEventListener("click", (e) => {
+   clickCount += 1;
+   if (clickCount === 4) {
+      const el = document.getElementById("second-text");
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+   }
+});
+
+const man2 = document.getElementById("man2");
+man2.addEventListener("click", (e) => {
+   clickCount += 1;
+   if (clickCount === 5) {
+      const el = document.getElementById("third-text");
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+   }
+});
+
+const man3 = document.getElementById("man3");
+man3.addEventListener("click", (e) => {
+   clickCount += 1;
+   if (clickCount === 6) {
+      const el = document.getElementById("firth-text");
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+   }
+});
+
+const man4 = document.getElementById("man4");
+man4.addEventListener("click", (e) => {
+   clickCount += 1;
+   if (clickCount === 7) {
+      const el = document.getElementById("final-text");
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.style.opacity = 0;
+   }
 });

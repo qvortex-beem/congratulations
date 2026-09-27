@@ -6,6 +6,10 @@
    font-family: sans-serif;
 }
 
+html {
+   background-color: #f6a4a4;
+}
+
 body::before {
    content: "";
    position: absolute;
@@ -53,7 +57,7 @@ main {
    .firework {
       opacity: 0;
       z-index: -1;
-      transform: rotateZ(-45deg);
+      /* transform: rotateZ(-45deg); */
       position: absolute;
       /* transition: all 0.5s; */
       .boom {
@@ -62,6 +66,7 @@ main {
          left: 0px;
          width: 200px;
          opacity: 0;
+         filter: none;
       }
       .roket {
          top: 0px;
@@ -78,23 +83,8 @@ main {
 
    #firework2 {
       margin-right: -400px;
-      transform: scale(-1) rotateZ(135deg);
-   }
-}
-
-@media screen and (max-width: 1000px) {
-   main {
-      height: 800px;
-
-      h2 {
-         font-size: 30px;
-      }
-      #firework1 {
-         margin-right: 500px;
-      }
-      #firework2 {
-         margin-right: 0px;
-      }
+      /* transform: scale(-1); */
+      /* rotateZ(135deg) */
    }
 }
 
@@ -139,7 +129,7 @@ main {
       opacity: 1;
    }
    100% {
-      transform: translateX(1000px);
+      transform: translateY(-1000px);
       opacity: 1;
    }
 }
@@ -167,4 +157,96 @@ main {
 
 .boom.exploding {
    animation: explode 1s ease-out forwards;
+}
+
+.not-main {
+   background-color: #f6a4a4;
+}
+
+#first-text {
+   margin-top: 1000px;
+}
+
+.congratulation-text {
+   margin: 0 100px;
+   margin-bottom: 1200px;
+   display: flex;
+   justify-content: space-between;
+
+   .img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 800px;
+   }
+   img {
+      width: 300px;
+   }
+}
+
+.text {
+   text-align: justify;
+   width: 800px;
+   font-size: 32px;
+   color: #4e2e2e;
+   .list {
+      margin: 15px 25px;
+   }
+   b {
+      font-weight: 900;
+   }
+}
+
+.man:hover {
+   cursor: pointer;
+}
+
+#final-text {
+   font-size: 50px;
+   text-align: center;
+   margin-bottom: 1000px;
+   transition: all 10s;
+}
+
+@media screen and (max-width: 1000px) {
+   main {
+      height: 800px;
+
+      h2 {
+         font-size: 30px;
+      }
+      #firework1 {
+         margin-right: 500px;
+      }
+      #firework2 {
+         margin-right: 0px;
+      }
+   }
+   .congratulation-text {
+      flex-direction: column;
+      margin: 0 35px;
+      justify-content: left;
+      margin-bottom: 1000px;
+      .text {
+         text-align: left;
+         font-size: 16px;
+         width: 300px;
+         .list {
+            margin: 30px 15px;
+         }
+      }
+      .img {
+         margin-top: 25px;
+         width: 300px;
+         img {
+            width: 100px;
+         }
+      }
+   }
+   #final-text {
+      font-size: 40px;
+      text-align: center;
+      margin-bottom: 1000px;
+      transition: all 10s;
+   }
 }
