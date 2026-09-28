@@ -3,7 +3,7 @@
    padding: 0;
    box-sizing: border-box;
    transition: all 0.5s;
-   font-family: sans-serif;
+   font-family: "Nunito", sans-serif;
 }
 
 html {
@@ -48,7 +48,8 @@ main {
    }
 
    h2 {
-      text-transform: uppercase;
+      font-family: "rusjellyka";
+      /* text-transform: uppercase; */
       font-size: 60px;
       margin: 50px 0;
       opacity: 0;
@@ -111,14 +112,10 @@ main {
 @keyframes pulse {
    0%,
    100% {
-      box-shadow:
-         #f6a4a4 0 0 100px,
-         inset #f6a4a4 0 0 100px;
+      filter: drop-shadow(0 0 30px #fefefe) drop-shadow(0 0 60px #f8bdbd);
    }
    50% {
-      box-shadow:
-         #f6a4a4 0 0 0px,
-         inset #f6a4a4 0 0 0px;
+      filter: drop-shadow(0 0 0px #f8bdbd);
    }
 }
 
@@ -195,6 +192,13 @@ main {
    b {
       font-weight: 900;
    }
+   .rusjellyka {
+      font-family: "rusjellyka";
+   }
+}
+
+li {
+   margin-top: 5px;
 }
 
 .man:hover {
@@ -205,7 +209,9 @@ main {
    font-size: 50px;
    text-align: center;
    margin-bottom: 1000px;
-   transition: all 10s;
+   transition: all 5s;
+   font-family: "rusjellyka";
+   /* text-transform: uppercase; */
 }
 
 @media screen and (max-width: 1000px) {
@@ -247,6 +253,53 @@ main {
       font-size: 40px;
       text-align: center;
       margin-bottom: 1000px;
-      transition: all 10s;
    }
+}
+
+@font-face {
+   font-family: "Nunito";
+   src: url("fonts/nunito/Nunito-Light.ttf") format("truetype");
+   font-weight: 300;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Nunito";
+   src: url("fonts/nunito/Nunito-Regular.ttf") format("truetype");
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Nunito";
+   src: url("fonts/nunito/Nunito-SemiBold.ttf") format("truetype");
+   font-weight: 600;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Nunito";
+   src: url("fonts/nunito/Nunito-Bold.ttf") format("truetype");
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Nunito";
+   src: url("fonts/nunito/Nunito-ExtraBold.ttf") format("truetype");
+   font-weight: 800;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "rusjellyka";
+   src: url(fonts/RUSJellyka\ -\ Love\ and\ Passion.ttf) format("truetype");
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
 }

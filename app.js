@@ -1,12 +1,18 @@
+let clickCount = 0;
+let alert1 = true;
 const man = document.getElementById("man");
 window.onload = () => {
    man.style.transform = "translateX(0px)";
    setTimeout(() => {
       man.style.animation = "byte 2s linear infinite, pulse 1s linear infinite";
    }, 450);
+   setTimeout(() => {
+      if (clickCount === 0 && alert1) {
+         alert("Кликай на мужика, пожалуйста");
+         alert1 = false;
+      }
+   }, 5000);
 };
-
-let clickCount = 0;
 
 man.addEventListener("click", (event) => {
    clickCount++;
